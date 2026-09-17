@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sàn Gỗ Cao Cấp NoVaRo - Đẳng Cấp Không Gian Sống</title>
+    <style>
+        :root {
+            --primary-color: #5c3a21;
+            --secondary-color: #cda372;
+            --light-bg: #f9f6f0;
+            --dark-text: #2c2c2c;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--dark-text);
+            background-color: #fff;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 { margin: 0; font-size: 28px; letter-spacing: 2px; }
+        header span { color: var(--secondary-color); }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--secondary-color); }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1350&q=80') center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h2 { font-size: 42px; margin-bottom: 15px; }
+        .hero p { font-size: 18px; max-width: 600px; margin: 0 auto 25px; }
+
+        .container { padding: 50px 5%; }
+        .section-title { text-align: center; margin-bottom: 40px; color: var(--primary-color); }
+
+        /* Product Cards */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            background: #fff;
+        }
+
+        .product-card:hover { transform: translateY(-5px); }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-info { padding: 20px; }
+        .product-info h3 { margin-top: 0; color: var(--primary-color); }
+        .badge-warranty {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            padding: 4px 8px;
+            font-size: 12px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        /* CAD Download Section */
+        .cad-section {
+            background-color: var(--light-bg);
+            padding: 4px 20px;
+            border-radius: 8px;
+            margin-top: 40px;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .btn-download {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .btn-download:hover { background-color: var(--secondary-color); }
+
+        /* Legal Info Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #ccc;
+            padding: 40px 5% 20px;
+            font-size: 14px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-grid h4 { color: white; margin-bottom: 15px; }
+        .footer-bottom { text-align: center; border-top: 1px solid #333; padding-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>NoVa<span>Ro</span></h1>
+        <nav>
+            <a href="#products">Sản Phẩm</a>
+            <a href="#cad">Bản Vẽ CAD</a>
+            <a href="#warranty">Bảo Hành</a>
+            <a href="#contact">Liên Hệ</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Sàn Gỗ Cao Cấp NoVaRo</h2>
+        <p>Giải pháp không gian sang trọng, bền bỉ cùng thời gian với công nghệ chuẩn Châu Âu.</p>
+    </section>
+
+    <div class="container" id="products">
+        <h2 class="section-title">Danh Mục Dòng Sản Phẩm</h2>
+        <div class="products-grid">
+            
+            <!-- Sản phẩm 1 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=600&q=80" alt="Sàn Gỗ Tự Nhiên NoVaRo Oak">
+                <div class="product-info">
+                    <span class="badge-warranty">Bảo Hành 25 Năm</span>
+                    <h3>NoVaRo Premium Oak (Gỗ Sồi)</h3>
+                    <p>Mã SP: NVR-101 | Độ dày: 12mm</p>
+                    <p>Chống nước vượt trội, vân gỗ sồi tự nhiên mang lại vẻ đẹp ấm cúng, sang trọng.</p>
+                </div>
+            </div>
+
+            <!-- Sản phẩm 2 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80" alt="Sàn Gỗ Công Nghiệp NoVaRo Walnut">
+                <div class="product-info">
+                    <span class="badge-warranty">Bảo Hành 15 Năm</span>
+                    <h3>NoVaRo Luxury Walnut (Gỗ Óc Chó)</h3>
+                    <p>Mã SP: NVR-202 | Độ dày: 8mm</p>
+                    <p>Màu trầm hiện đại, bề mặt chống xước tiêu chuẩn AC5, phù hợp căn hộ & văn phòng.</p>
+                </div>
+            </div>
+
+            <!-- Sản phẩm 3 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?auto=format&fit=crop&w=600&q=80" alt="Sàn Gỗ Xương Cá NoVaRo Herringbone">
+                <div class="product-info">
+                    <span class="badge-warranty">Bảo Hành 20 Năm</span>
+                    <h3>NoVaRo Herringbone (Xương Cá)</h3>
+                    <p>Mã SP: NVR-303 | Độ dày: 12mm</p>
+                    <p>Kiểu lát xương cá phong cách cổ điển Châu Âu, hèm khóa thông minh chống hở khe.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Section Tải File CAD -->
+        <div class="cad-section" id="cad">
+            <h3>📐 Thư Viện Bản Vẽ Kỹ Thuật CAD Lắp Đặt Sàn Gỗ NoVaRo</h3>
+            <p>Dành riêng cho các Kiến trúc sư và Đơn vị thi công. Tải về file CAD cấu tạo hèm khóa và mặt cắt lát sàn tiêu chuẩn.</p>
+            <a href="cad/novaro-floor-details.dwg" class="btn-download" download>Tải File CAD (.DWG)</a>
+        </div>
+    </div>
+
+    <!-- Footer / Thông tin pháp lý -->
+    <footer id="contact">
+        <div class="footer-grid">
+            <div>
+                <h4>THƯƠNG HIỆU SÀN GỖ NOVARO</h4>
+                <p>Chuyên cung cấp và thi công giải pháp sàn gỗ tự nhiên, sàn gỗ công nghiệp cao cấp trên toàn quốc.</p>
+            </div>
+            <div id="warranty">
+                <h4>CHÍNH SÁCH BẢO HÀNH UY TÍN</h4>
+                <p>• Bảo hành mối mọt & ngấm nước dài hạn (15 - 25 năm).</p>
+                <p>• Cam kết 1 đổi 1 nếu phát hiện lỗi từ nhà sản xuất.</p>
+                <p>• Bảo trì kỹ thuật miễn phí trong 24 tháng đầu.</p>
+            </div>
+            <div>
+                <h4>THÔNG TIN PHÁP LÝ</h4>
+                <p><strong>Đơn vị chủ quản:</strong> Công ty TNHH Sàn Gỗ NoVaRo Việt Nam</p>
+                <p><strong>Người đại diện pháp lý:</strong> Ông / Bà [Điền Tên Đại Diện Tại Đây]</p>
+                <p><strong>Mã số thuế:</strong> 0101234567</p>
+                <p><strong>Địa chỉ:</strong> Hà Nội, Việt Nam</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 NoVaRo Flooring. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
