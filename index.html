@@ -3,202 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sàn Gỗ Cốt Đen Cao Cấp NoVaRo Black - Đẳng Cấp Không Gian Sống</title>
+    <title>Sàn Gỗ Cốt Đen Cao Cấp NoVaRo Black - Bộ Tự Tập 2026</title>
     <style>
         :root {
-            --primary-color: #1a1a1a;
-            --accent-color: #cda372;
-            --card-bg: #ffffff;
-            --light-bg: #f4f4f6;
-            --dark-text: #222222;
+            --primary-color: #1a252f;
+            --accent-color: #c8965a;
+            --bg-light: #f8f9fa;
+            --text-color: #2c3e50;
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--dark-text);
-            background-color: var(--light-bg);
+            background-color: #f4f6f8;
+            color: var(--text-color);
             line-height: 1.6;
         }
 
         header {
             background-color: var(--primary-color);
-            color: white;
-            padding: 20px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-
-        header h1 { margin: 0; font-size: 26px; letter-spacing: 2px; }
-        header span { color: var(--accent-color); }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
-        nav a:hover { color: var(--accent-color); }
-
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/NV-D303.jpg') center/cover;
-            color: white;
+            color: #ffffff;
+            padding: 40px 20px;
             text-align: center;
-            padding: 90px 20px;
         }
 
-        .hero h2 { font-size: 40px; margin-bottom: 10px; color: var(--accent-color); }
-        .hero p { font-size: 18px; max-width: 700px; margin: 0 auto 20px; }
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-        .container { padding: 50px 5%; max-width: 1300px; margin: 0 auto; }
-        .section-title { text-align: center; margin-bottom: 40px; color: var(--primary-color); font-size: 30px; }
+        header p {
+            font-size: 1.1rem;
+            color: #ecf0f1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-        /* Grid hiển thị sản phẩm */
-        .products-grid {
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+            gap: 25px;
         }
 
         .product-card {
-            background: var(--card-bg);
+            background: #ffffff;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid #e1e1e1;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
-        .product-card:hover { 
-            transform: translateY(-7px); 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
         }
 
-        .product-card img {
+        .product-img {
             width: 100%;
-            height: 380px;
+            height: 220px;
             object-fit: cover;
             border-bottom: 3px solid var(--accent-color);
+            background-color: #e9ecef;
         }
 
-        .product-info { padding: 22px; }
-        .product-info h3 { margin: 0 0 10px 0; color: var(--primary-color); font-size: 22px; }
-
-        .specs-list {
-            list-style: none;
-            padding: 0;
-            margin: 15px 0;
-            font-size: 14px;
-            color: #555;
+        .product-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: flex-column;
         }
 
-        .specs-list li {
-            padding: 4px 0;
-            border-bottom: 1px stroke #f0f0f0;
-        }
-
-        .badge-container {
+        .badges {
             display: flex;
             gap: 8px;
             margin-bottom: 12px;
         }
 
         .badge {
-            display: inline-block;
+            font-size: 0.75rem;
             padding: 4px 10px;
-            font-size: 12px;
-            font-weight: bold;
             border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
         }
 
-        .badge-warranty { background: var(--accent-color); color: white; }
-        .badge-ac { background: #333; color: white; }
-
-        /* Khối tải CAD */
-        .cad-section {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            margin-top: 50px;
-            border-left: 6px solid var(--accent-color);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        .badge-warranty {
+            background-color: #d4a373;
+            color: #fff;
         }
 
-        .btn-download {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            margin-top: 15px;
-            transition: 0.3s;
+        .badge-standard {
+            background-color: #2b2d42;
+            color: #fff;
         }
 
-        .btn-download:hover { background-color: var(--accent-color); color: #000; }
+        .product-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
 
-        /* Footer / Pháp lý */
+        .product-specs {
+            list-style: none;
+            font-size: 0.95rem;
+        }
+
+        .product-specs li {
+            margin-bottom: 8px;
+            color: #4a5568;
+        }
+
+        .product-specs strong {
+            color: var(--primary-color);
+        }
+
         footer {
             background-color: var(--primary-color);
-            color: #ccc;
-            padding: 40px 5% 20px;
-            font-size: 14px;
+            color: #a0aec0;
+            padding: 30px 20px;
             margin-top: 60px;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 4px solid var(--accent-color);
         }
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
-            max-width: 1300px;
-            margin: 0 auto 30px;
+        footer p {
+            margin-bottom: 8px;
         }
 
-        .footer-grid h4 { color: white; margin-bottom: 15px; font-size: 16px; border-bottom: 2px solid var(--accent-color); display: inline-block; padding-bottom: 5px; }
-        .footer-bottom { text-align: center; border-top: 1px solid #333; padding-top: 20px; color: #888; }
+        footer strong {
+            color: #ffffff;
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>NoVa<span>Ro</span> Black</h1>
-        <nav>
-            <a href="#products">Mẫu Sản Phẩm</a>
-            <a href="#cad">Bản Vẽ CAD</a>
-            <a href="#warranty">Chính Sách Bảo Hành</a>
-            <a href="#contact">Thông Tin Pháp Lý</a>
-        </nav>
+        <h1>Sàn Gỗ Cốt Đen NoVaRo Black</h1>
+        <p>Bộ sưu tập sàn gỗ siêu chịu nước cao cấp – Giải pháp tối ưu cho không gian sống hiện đại</p>
     </header>
 
-    <section class="hero">
-        <h2>Sàn Gỗ Cốt Đen Cao Cấp NoVaRo</h2>
-        <p>Bộ Sưu Tập Cốt Đen Chống Nước Tuyệt Đối | Tiêu Chuẩn AC4 | Bảo Hành Chính Hãng 15 Năm</p>
-    </section>
+    <div class="container">
+        <h2 class="section-title">Danh Mục Sản Phẩm NoVaRo Black</h2>
 
-    <div class="container" id="products">
-        <h2 class="section-title">Bộ Sưu Tập Sàn Gỗ Cốt Đen NoVaRo Black</h2>
-        
-        <div class="products-grid">
-
-            <!-- Mẫu NV-D301 -->
+        <div class="grid-container">
+            <!-- Sản phẩm 1 -->
             <div class="product-card">
-                <img src="images/NV-D301.jpg" alt="Sàn Gỗ Cốt Đen NoVaRo NV-D301">
+                <img class="product-img" src="images/NV-D301.png" alt="Sàn Gỗ Cốt Đen NoVaRo NV-D301">
                 <div class="product-info">
-                    <div class="badge-container">
+                    <div class="badges">
                         <span class="badge badge-warranty">Bảo Hành 15 Năm</span>
-                        <span class="badge badge-ac">Tiêu Chuẩn AC4</span>
+                        <span class="badge badge-standard">Tiêu Chuẩn AC4</span>
                     </div>
-                    <h3>NoVaRo NV-D301</h3>
-                    <ul class="specs-list">
+                    <h3 class="product-title">NoVaRo NV-D301</h3>
+                    <ul class="product-specs">
                         <li><strong>Kích thước:</strong> 1220 x 168 x 12 mm</li>
                         <li><strong>Quy cách:</strong> 8 tấm/hộp (1.639 m²)</li>
                         <li><strong>Cốt gỗ:</strong> HDF Cốt đen cao cấp siêu chịu nước</li>
@@ -207,16 +203,16 @@
                 </div>
             </div>
 
-            <!-- Mẫu NV-D302 -->
+            <!-- Sản phẩm 2 -->
             <div class="product-card">
-                <img src="images/NV-D302.jpg" alt="Sàn Gỗ Cốt Đen NoVaRo NV-D302">
+                <img class="product-img" src="images/NV-D302.png" alt="Sàn Gỗ Cốt Đen NoVaRo NV-D302">
                 <div class="product-info">
-                    <div class="badge-container">
+                    <div class="badges">
                         <span class="badge badge-warranty">Bảo Hành 15 Năm</span>
-                        <span class="badge badge-ac">Tiêu Chuẩn AC4</span>
+                        <span class="badge badge-standard">Tiêu Chuẩn AC4</span>
                     </div>
-                    <h3>NoVaRo NV-D302</h3>
-                    <ul class="specs-list">
+                    <h3 class="product-title">NoVaRo NV-D302</h3>
+                    <ul class="product-specs">
                         <li><strong>Kích thước:</strong> 1220 x 168 x 12 mm</li>
                         <li><strong>Quy cách:</strong> 8 tấm/hộp (1.639 m²)</li>
                         <li><strong>Cốt gỗ:</strong> HDF Cốt đen cao cấp siêu chịu nước</li>
@@ -225,16 +221,16 @@
                 </div>
             </div>
 
-            <!-- Mẫu NV-D303 -->
+            <!-- Sản phẩm 3 -->
             <div class="product-card">
-                <img src="images/NV-D303.jpg" alt="Sàn Gỗ Cốt Đen NoVaRo NV-D303">
+                <img class="product-img" src="images/NV-D303.png" alt="Sàn Gỗ Cốt Đen NoVaRo NV-D303">
                 <div class="product-info">
-                    <div class="badge-container">
+                    <div class="badges">
                         <span class="badge badge-warranty">Bảo Hành 15 Năm</span>
-                        <span class="badge badge-ac">Tiêu Chuẩn AC4</span>
+                        <span class="badge badge-standard">Tiêu Chuẩn AC4</span>
                     </div>
-                    <h3>NoVaRo NV-D303</h3>
-                    <ul class="specs-list">
+                    <h3 class="product-title">NoVaRo NV-D303</h3>
+                    <ul class="product-specs">
                         <li><strong>Kích thước:</strong> 1220 x 168 x 12 mm</li>
                         <li><strong>Quy cách:</strong> 8 tấm/hộp (1.639 m²)</li>
                         <li><strong>Cốt gỗ:</strong> HDF Cốt đen cao cấp siêu chịu nước</li>
@@ -243,94 +239,65 @@
                 </div>
             </div>
 
-            <!-- Mẫu NV-D304 -->
+            <!-- Sản phẩm 4 -->
             <div class="product-card">
-                <img src="images/NV-D304.jpg" alt="Sàn Gỗ Cốt Đen NoVaRo NV-D304">
+                <img class="product-img" src="images/NV-D304.png" alt="Sàn Gỗ Cốt Đen NoVaRo NV-D304">
                 <div class="product-info">
-                    <div class="badge-container">
+                    <div class="badges">
                         <span class="badge badge-warranty">Bảo Hành 15 Năm</span>
-                        <span class="badge badge-ac">Tiêu Chuẩn AC4</span>
+                        <span class="badge badge-standard">Tiêu Chuẩn AC4</span>
                     </div>
-                    <h3>NoVaRo NV-D304</h3>
-                    <ul class="specs-list">
+                    <h3 class="product-title">NoVaRo NV-D304</h3>
+                    <ul class="product-specs">
                         <li><strong>Kích thước:</strong> 1220 x 168 x 12 mm</li>
                         <li><strong>Quy cách:</strong> 8 tấm/hộp (1.639 m²)</li>
                         <li><strong>Cốt gỗ:</strong> HDF Cốt đen cao cấp siêu chịu nước</li>
-                        <li><strong>Đặc điểm:</strong> Tông màu xám đen cá tính, chuẩn Châu Âu</li>
+                        <li><strong>Đặc điểm:</strong> Gam màu sáng hiện đại, mở rộng không gian</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Mẫu NV-D305 -->
+            <!-- Sản phẩm 5 -->
             <div class="product-card">
-                <img src="images/NV-D305.jpg" alt="Sàn Gỗ Cốt Đen NoVaRo NV-D305">
+                <img class="product-img" src="images/NV-D305.png" alt="Sàn Gỗ Cốt Đen NoVaRo NV-D305">
                 <div class="product-info">
-                    <div class="badge-container">
+                    <div class="badges">
                         <span class="badge badge-warranty">Bảo Hành 15 Năm</span>
-                        <span class="badge badge-ac">Tiêu Chuẩn AC4</span>
+                        <span class="badge badge-standard">Tiêu Chuẩn AC4</span>
                     </div>
-                    <h3>NoVaRo NV-D305</h3>
-                    <ul class="specs-list">
+                    <h3 class="product-title">NoVaRo NV-D305</h3>
+                    <ul class="product-specs">
                         <li><strong>Kích thước:</strong> 1220 x 168 x 12 mm</li>
                         <li><strong>Quy cách:</strong> 8 tấm/hộp (1.639 m²)</li>
                         <li><strong>Cốt gỗ:</strong> HDF Cốt đen cao cấp siêu chịu nước</li>
-                        <li><strong>Đặc điểm:</strong> Tông màu vàng sồi sáng nhẹ nhàng, thoáng đãng</li>
+                        <li><strong>Đặc điểm:</strong> Tông xám mộc thanh lịch, đẳng cấp</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Mẫu NV-D306 -->
+            <!-- Sản phẩm 6 -->
             <div class="product-card">
-                <img src="images/NV-D306.jpg" alt="Sàn Gỗ Cốt Đen NoVaRo NV-D306">
+                <img class="product-img" src="images/NV-D306.png" alt="Sàn Gỗ Cốt Đen NoVaRo NV-D306">
                 <div class="product-info">
-                    <div class="badge-container">
+                    <div class="badges">
                         <span class="badge badge-warranty">Bảo Hành 15 Năm</span>
-                        <span class="badge badge-ac">Tiêu Chuẩn AC4</span>
+                        <span class="badge badge-standard">Tiêu Chuẩn AC4</span>
                     </div>
-                    <h3>NoVaRo NV-D306</h3>
-                    <ul class="specs-list">
+                    <h3 class="product-title">NoVaRo NV-D306</h3>
+                    <ul class="product-specs">
                         <li><strong>Kích thước:</strong> 1220 x 168 x 12 mm</li>
                         <li><strong>Quy cách:</strong> 8 tấm/hộp (1.639 m²)</li>
                         <li><strong>Cốt gỗ:</strong> HDF Cốt đen cao cấp siêu chịu nước</li>
-                        <li><strong>Đặc điểm:</strong> Màu nâu hạt dẻ trầm ấm, sang trọng</li>
+                        <li><strong>Đặc điểm:</strong> Vân gỗ óc chó đậm chất hoàng gia</li>
                     </ul>
                 </div>
             </div>
-
-        </div>
-
-        <!-- Section Tải File CAD -->
-        <div class="cad-section" id="cad">
-            <h3>📐 Thư Viện Bản Vẽ Kỹ Thuật CAD (Sàn Gỗ Cốt Đen NoVaRo)</h3>
-            <p>Hỗ trợ thiết kế & thi công: Tải về file CAD mặt cắt hèm khóa 12mm và tiêu chuẩn lát sàn NoVaRo Black.</p>
-            <a href="cad/novaro-black-details.dwg" class="btn-download" download>Tải Bản Vẽ CAD (.DWG)</a>
         </div>
     </div>
 
-    <!-- Footer / Thông tin pháp lý -->
-    <footer id="contact">
-        <div class="footer-grid">
-            <div>
-                <h4>SÀN GỖ NOVARO BLACK</h4>
-                <p>Thương hiệu sàn gỗ cốt đen cao cấp chịu nước. Sản phẩm mang lại không gian đẳng cấp, bền bỉ cùng thời gian cho mọi nhà.</p>
-            </div>
-            <div id="warranty">
-                <h4>CHÍNH SÁCH BẢO HÀNH UY TÍN</h4>
-                <p>• <strong>Thời hạn bảo hành:</strong> 15 Năm chính hãng.</p>
-                <p>• Cam kết bảo hành cong vênh, mối mọt và chịu nước vượt trội.</p>
-                <p>• Đổi mới 100% nếu phát hiện lỗi từ nhà sản xuất.</p>
-            </div>
-            <div>
-                <h4>THÔNG TIN PHÁP LÝ</h4>
-                <p><strong>Đơn vị phân phối:</strong> Công ty TNHH Sàn Gỗ NoVaRo Việt Nam</p>
-                <p><strong>Người đại diện pháp lý:</strong> Phạm Tuấn Quỳnh</p>
-                <p><strong>Mã số thuế:</strong> 0101234567</p>
-                <p><strong>Địa chỉ:</strong> TP. Hà Nội, Việt Nam</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2026 NoVaRo Flooring. Tất cả quyền được bảo lưu.</p>
-        </div>
+    <footer>
+        <p><strong>Thương Hiệu Sàn Gỗ Cao Cấp NoVaRo</strong></p>
+        <p>Bản quyền thuộc về Công ty Sàn Gỗ NoVaRo &copy; 2026. All rights reserved.</p>
     </footer>
 
 </body>
